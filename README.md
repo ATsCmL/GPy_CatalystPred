@@ -8,6 +8,6 @@ consists of descriptors and reaction conditions as the features, and yields as t
 
 Codes folder contains:
 
-1. 'GPy' code folder : Containing CatalystFunc.py and GPy.py . GPy.py imports data from designmats and functions from CatalystFuncs.
-2. 'Graph kernel' folder : GraphKernel.py for running Graphkernel based code on SMILES
+1. 'GaussianProcess' code folder : Containing CatalystFunc.py and GPy.py . GPy.py imports data from designmats and functions from CatalystFuncs.
+2. 'Graph kernel' folder : Jupyter Notebook yield_expt.ipynb for running Graphkernel based code on SMILES
 3. 'NN' folder: Neural Network code
