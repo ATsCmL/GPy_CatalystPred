@@ -14,11 +14,20 @@ Yield is the last column in all designmats.
 
 An example for running the code:
 
+We recommend using Anaconda for these codes. Create a new environment using the requirement.yml file:
+conda env create --name myenv -f requirement.yml
+
+Step 1: Go to codes/GaussianProcesses
+Step 2: Download the GaussianProcesses folder
+Step 3: Run GPy.py 
+
+The errors and plots will be printed.
+
 
 
 Linear Regression can also be performed using the LinearKerenel in the GPy library. 
 
-Codes folder contains:
+Codes folder also contains:
 
 1. 'GaussianProcess' code folder : Containing CatalystFunc.py and GPy.py . GPy.py imports data from designmats and various functions from CatalystFuncs.
 2. 'Graph kernel' folder : Jupyter Notebook yield_expt.ipynb for running Graphkernel based code on SMILES
