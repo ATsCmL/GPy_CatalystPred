@@ -1,10 +1,20 @@
 # GPy_CatalystPred
-The project contains the following data folders:
+Prediction of Ruthenium catalysed hydrogenation of esters is done using Gaussian Processes. GPy library has been used to implement Gaussian Processes. 
 
-1. data : This folder contains all the excel files related to reactions (God file) , and descriptors of solvent, catalysts,esters, base and reaction conditions. The Gaussian Processes and NN codes can use this data as it is. The dataset includes various design matrices (designmats).
+Datasets: 
 
-The designmats are generated using one hot encoding and combinations of chemical descriptors of ester and catalyst. Each designmat file
-consists of descriptors and reaction conditions as the features, and yields as the target variable. Yield is the last column of designmats
+1. 'data' folder contains all the excel files related to reactions curated from literature, descriptors of solvent, catalysts,esters, base and reaction conditions. 
+2. designmats (design matrices) are compiled from DFT-calaculated descriptors. The designmats can be found in 'data/designmats' folder.
+3. rdkit, ,morgan and maccs fingerprints have been calculated from rdkit library. The design matrices created using these fingerprints can be found in 'data/rdkit_mccas_morgan_fingerprints' folder
+
+designmats are the imported data, which is then subdivided into input and output variables. Output variable is the 'yield', input variables are chemical properties of reactants, solvents, bases, reaction conditions etc.
+
+Yield is the last column in all designmats.
+
+
+An example for running the code:
+
+
 
 Linear Regression can also be performed using the LinearKerenel in the GPy library. 
 
