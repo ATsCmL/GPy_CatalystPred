@@ -11,7 +11,7 @@ from sklearn import preprocessing
 from itertools import product
 
 
-#path = "https://raw.githubusercontent.com/AbhinMat/CatalystData2/main/data/designmats/"
+
 path = "data/designmats/"
 designmatindices = [(8,8)] 
 
@@ -41,14 +41,17 @@ for i in range(len(designmatindices)):
             
         kernel =  GPy.kern.Matern52(numftrs,ARD=True)+GPy.kern.Bias(numftrs)
             
-        #simple GP model
+        #simple GP model with kernel = kernel
         m = GPy.models.GPRegression(X_train,Y_train,kernel = kernel)
          
             
-            
+        #maximum iterations    
         maxfeval = 100000
+        
+        #prediction
         [pred_mean_train, var_train], [pred_mean_test, var_test] = model_train_test(m,X_train,X_test,maxfeval,optimize = True)
          
+        #error calculations
         std_train, std_test = np.sqrt(var_train), np.sqrt(var_test)
         err_train = mean_percent_error(pred_mean_train,Y_train,mu_Y,stdev_Y)
         err_test = mean_percent_error(pred_mean_test,Y_test,mu_Y,stdev_Y)
@@ -70,6 +73,10 @@ for i in range(len(designmatindices)):
         print('Train r2 error:',r2_train)
         print('Test r2 error:',r2_test)
         m.kern.plot_ARD()
-            
+        
+        #plot and save figures
+        plot_save_fig('filename for training', original_scale(mu_Y,stdev_Y,pred_mean_train.flatten()),original_scale(mu_Y,stdev_Y,Y_train.flatten()),std_train.flatten(),s,0.5)
+        plot_save_fig('filename for test', original_scale(mu_Y,stdev_Y,pred_mean_test.flatten()),original_scale(mu_Y,stdev_Y,Y_test.flatten()),std_test.flatten(),s,0.5)
+        
         
 
