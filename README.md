@@ -19,11 +19,18 @@ We recommend using Anaconda for these codes. Create a new environment using the 
 conda env create --name myenv -f requirement.yml
 
 Step 1: Go to codes/GaussianProcesses
+
 Step 2: Download the GaussianProcesses folder
+
 Step 3: Run GPy.py 
 
-The errors and plots will be printed as follows:
+Following output should be expected:
+
+Details of GP optimization and train/test errors :
+
 <img width="945" alt="Screenshot 2023-02-13 at 19 01 04" src="https://user-images.githubusercontent.com/96231277/218550130-bea21fbf-b322-4591-ab2f-797f80e22f5e.png">
+
+Training set prediction(Top) and Testing set prediction (Bottom):
 
 <img width="416" alt="Screenshot 2023-02-13 at 19 01 28" src="https://user-images.githubusercontent.com/96231277/218550246-997e6d7b-5425-4d1f-ab08-b79ae60b664c.png">
 
